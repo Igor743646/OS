@@ -1,15 +1,12 @@
-#include "square_and_gcf.h"
+#include "e_and_gcf.h"
 
-float SinIntegral(float A, float B, float e) {
-	if (A > B) error_msg("Первый аргумент должен быть меньше второго!");
-	if (e <= 0) error_msg("Шаг не может быть меньше или равен нулю!");
-	printf("Подсчет интеграла методом прямоугольников...\n");
-	float S = 0;
-	const unsigned long long  n = (B - A) / e;
-	for (unsigned long long i = 0; i < n; ++i) {
-		S += sin(A + i * e) * e;
-	}
-	return S;
+float E(const int x) {
+	if (x < 1) error_msg("Число должно быть натуральным");
+	printf("Подсчет E формулой (1+1/x)^x...\n");
+	float res = 1;
+	float k = (1 + 1/((float)x));
+	for (int i = 0; i < x; ++i) res*=k;
+	return res;
 }
 
 int GCF(int A, int B) {
