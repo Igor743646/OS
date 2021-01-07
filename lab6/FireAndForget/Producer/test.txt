@@ -1,0 +1,14 @@
+create 34
+create 35
+create 36
+create 37
+create 4
+create 3
+create 2
+create 1
+exec 37 a 1
+exec 34 b 2
+exec 1 a 1
+remove 34
+exec 1 a
+exec 34 b
